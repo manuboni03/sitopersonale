@@ -136,8 +136,8 @@ em{
     }
     .contenitore-cards{
         padding-top: 30px;
-        padding-bottom: 40px;
-        clear:both;
+        padding-bottom: 30px;
+        clear: both;
         display: flex;
         justify-content: center;
         overflow: hidden;
