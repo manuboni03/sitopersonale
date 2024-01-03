@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width: device-width; initial-scale: 1">
+        <link rel="icon" type="image/x-icon" href="img_e_css/favicon.png">
+        <link rel="stylesheet" href="img_e_css/stili.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Manu's website</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init('YOUR_PUBLIC_KEY');
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // generate a five digit number for the contact_number variable
+                    this.contact_number.value = Math.random() * 100000 | 0;
+                    // these IDs from the previous steps
+                    emailjs.sendForm('contact_service', 'contact_form', this)
+                        .then(function() {
+                            console.log('SUCCESS!');
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                        });
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="contenitore">
+                <h1>Manu's website</h1>
+                <nav class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <div class="navbar-nav spazio">
+                        <a href="sito.html" class="nav-item nav-link">Profilo</a>
+                        <a href="contattami.html" class="nav-item nav-link">Contattami</a>
+                        <a href="modulo.html" class="nav-item nav-link">Info</a>
+                    </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+        <div class="grandezza-font">
+            <div class="container-fluid">
+                <h1>Form di contatto</h1>
+                <h4><em>Compila questi campi per contattarmi</em></h4>
+            </div>
+            <div class="container">
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="user_name" placeholder="Nome">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="user_email" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Messaggio</label>
+                        <textarea class="form-control mb-3" name="message"></textarea>
+                    </div>
+                    <input type="submit" value="Send" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+            <div class="spaziatura">
+                <a href="#" class="nav-item nav-link disabled">Dec 2023</a>
+                <a href="#" class="nav-item nav-link disabled">Private Policy</a>
+                <a href="#" class="nav-item nav-link disabled">Terms of Copyright</a>
+            </div>
+        </div>
+    </body>
+</html>
