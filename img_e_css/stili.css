@@ -178,4 +178,9 @@ em{
     .pagina{
         height: 100v;
     }
+    .centrato{
+        display: flex;
+        justify-content: center;
+        padding-left: 40px;
+    }
 }
