@@ -90,6 +90,8 @@ em{
     }
     .grandezza-font{
         font-size: 40px;
+        position: relative;
+        min-height: 100vh;
     }
     .contenitore{
         background-color:antiquewhite;
@@ -172,10 +174,5 @@ em{
     }
     em{
         padding-bottom: 40px;
-    }
-    footer{
-        display: flex;
-        position: relative;
-        min-height: 100vh;
     }
 }
